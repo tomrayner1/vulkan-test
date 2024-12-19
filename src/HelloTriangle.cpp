@@ -1,20 +1,9 @@
-#include <iostream>
-
-#define GLFW_INCLUDE_VULKAN
-#include <GLFW/glfw3.h>
+#include "HelloTriangleApp.h"
 
 int main(int argc, char** argv) {
-  glfwInit();
+  HelloTriangleApplication app(800, 600);
 
-  glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-  GLFWwindow* window = glfwCreateWindow(800, 600, "vkHelloTriangle", nullptr, nullptr);
-
-  while (!glfwWindowShouldClose(window)) {
-    glfwPollEvents();
-  }
-
-  glfwDestroyWindow(window);
-  glfwTerminate();
+  app.Run();
 
   return 0;
 }
