@@ -28,4 +28,4 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(glfw)
 
-add_subdirectory(src)
+add_subdirectory(hellotriangle)
