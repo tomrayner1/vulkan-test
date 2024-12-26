@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.12)
 
-PROJECT(vulkantest VERSION 1.0 LANGUAGES CXX)
+project(vulkantest
+  VERSION 1.0
+  LANGUAGES CXX
+  DESCRIPTION "Experimenting with Vulkan"
+)
 
 # Ensure we are using C++23
 set(CMAKE_CXX_STANDARD 23)
