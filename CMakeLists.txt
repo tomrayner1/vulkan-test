@@ -28,4 +28,6 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(glfw)
 
+add_subdirectory(logging)
+
 add_subdirectory(hellotriangle)

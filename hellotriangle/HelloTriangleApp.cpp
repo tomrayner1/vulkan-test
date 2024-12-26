@@ -1,6 +1,7 @@
 #include "HelloTriangleApp.h"
-#include "GLFW/glfw3.h"
+
 #include <GLFW/glfw3.h>
+#include <logging.h>
 
 void HelloTriangleApplication::Run() {
   InitWindow();
@@ -10,6 +11,8 @@ void HelloTriangleApplication::Run() {
 }
 
 void HelloTriangleApplication::InitWindow() {
+  lg::Trace("HelloTriangleApplication::InitWindow()");
+
   glfwInit();
 
   glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
@@ -19,6 +22,7 @@ void HelloTriangleApplication::InitWindow() {
 }
 
 void HelloTriangleApplication::InitVulkan() {
+  lg::Trace("HelloTriangleApplication::InitVulkan()");
   createInstance();
 }
 
@@ -29,6 +33,8 @@ void HelloTriangleApplication::Loop() {
 }
 
 void HelloTriangleApplication::Cleanup() {
+  lg::Trace("HelloTriangleApplication::Cleanup()");
+
   vkDestroyInstance(m_Instance, nullptr);
 
   glfwDestroyWindow(m_Window);
@@ -40,6 +46,8 @@ void HelloTriangleApplication::Cleanup() {
 //------------------------------------------------------------------------------
 
 void HelloTriangleApplication::createInstance() {
+  lg::Trace("HelloTriangleApplication::createInstance()");
+
   VkApplicationInfo appInfo{};
   appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
   appInfo.pApplicationName = "Hello Triangle";
